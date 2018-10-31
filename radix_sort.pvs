@@ -18,6 +18,7 @@ radix_sort
 IMPORTING sorting, ints@mod_lems
 
 % d_nth computes the dth digit in the decimal representation of n
+% essa função retorna o d-ésimo digito de um número natural, a recursao eh feita na posição em que o digito vai estar
   d_nth(n, d : nat) : RECURSIVE below[10] =
     IF d = 0 THEN  rem(10)(n)
     ELSE d_nth( ndiv(n,10), d - 1)
@@ -26,6 +27,7 @@ IMPORTING sorting, ints@mod_lems
 
 % n_digits computes the number of digits in the decimal representation
 % of n
+% retorna a quantidade de digitos de um número natural, a recursao eh feita no valor de n
  n_digits(n:nat) : RECURSIVE posnat =
    IF n < 10 THEN 1
    ELSE 1 + n_digits(ndiv(n, 10))
@@ -44,6 +46,7 @@ IMPORTING sorting, ints@mod_lems
 %************************************************************
 
 % A simple algebraic property of n_digits.
+% queremos garantir que para todo numero, 10^(qtdDeDigitos de N) eh maior do que N
   d_digits_gt : CONJECTURE
    FORALL(n : nat): 10^(n_digits(n)) > n
 

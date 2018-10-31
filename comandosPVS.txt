@@ -1,0 +1,36 @@
+para iniciar uma prova é necessario q o mouse esteja em cima do "LEMMA" a ser provado.
+
+ESC - X: entra no terminal doidera la
+    -> tc: verifica a sintaxe do programa
+    -> prove : começa uma prova para o programa
+    -> x-prove: começa uma prova com aquela arvore daora
+    -> prove-theory: tenta provar toda a teoria que está no arquivo. Se uma prova precisar de outra e está não for 
+    provada, então o PVS falará que a prova estará "proved - incomplete"
+
+Ja "dentro da prova"
+    -> primeiramente precisamos saber qual estrategia de resolução faremos, geralmente será indução, portanto
+    digitar (induct "x"), onde x é a variavel que iremos induzir, pode ser uma lista, um natural, etc.
+    -> (expand "nome da funçao" "x"): para aplicar uma definiçao de alguma funçao e x é o numero da função para
+    não aplicar em todos os casos em que a formula apararece. 
+    -> (assert): verifica e garante a igualdade
+    -> (prop): simplifica conectivos proposicionais 
+    -> (undo "x") : retorna x passos, se x nao for explicito retorna um passo.
+    -> (skeep): simplifica fórmulas universais, ou seja, formulas com para todo no consequente, ou existenciais
+    no antecedente
+    -> (lemma "nome do lema"): é possivle usar lemas auxiliares para ajudar na prova, mas depois eles terão de ser 
+    provados também, os lemas são adicionados como hipoteses ao problema principal.
+    -> (inst "num da hipotese" "arg1" ... "argN") : instancia uma formula com dado argumento.
+    -> (split) : quando uma prova olhada de baixo para cima é quebrada, então divide 
+    o sequente em 2 sub arvores.
+    -> (postpone): adia a prova atual e pula para o proximo caso.
+
+    T => D, a           b, T => D
+    ------------------------------ (L->) , por exemplo.
+            a->b, T => D
+
+    ou seja, o split vai pegar "a->b, T => D" e quebrar em "T => D, a" e "b, T => D". Ficando entao:
+                                     __
+                                    |__| a->b, T => D
+                                    /  \
+                                 __/    \__
+                     T => D, a  |__|    |__|  b, T => D
