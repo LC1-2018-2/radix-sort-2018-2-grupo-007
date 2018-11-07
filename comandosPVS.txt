@@ -1,3 +1,4 @@
+
 para iniciar uma prova é necessario q o mouse esteja em cima do "LEMMA" a ser provado.
 
 ESC - X: entra no terminal doidera la
@@ -33,4 +34,31 @@ Ja "dentro da prova"
                                     |__| a->b, T => D
                                     /  \
                                  __/    \__
-                     T => D, a  |__|    |__|  b, T => D
+T => D, a |__| |__| b, T => D
+
+Quando IF interno - usar lift-if e dps prop;
+
+view-prelude-file (biblioteca básica do pvs)
+
+(typepred "expressão") - (pega o tipo da expressão indicada)
+
+(hide -1 1) - esconde formulas
+
+(reveal -1) - mostra a formula escondida
+
+M-x show-hidden-formulas
+
+M-x reset-pvs
+
+survival pvs
+
+posnat (natural positivo)
+
+para saber o que está provado - M-x prove-theory
+
+M-x display-proofs-formula (lista de provas existentes) -> apertar d pra definir a prova default e q pra sair
+
+type-check checa a sintaxe
+
+step-proof
+
