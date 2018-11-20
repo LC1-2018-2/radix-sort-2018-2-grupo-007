@@ -2319,7 +2319,6 @@
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-<<<<<<< HEAD
     (number_field nonempty-type-from-decl nil number_fields nil)
     (real_pred const-decl "[number_field -> boolean]" reals nil)
     (real nonempty-type-from-decl nil reals nil)
@@ -2343,16 +2342,6 @@
     (cdr adt-accessor-decl "[(cons?) -> list]" list_adt nil)
     (cons? adt-recognizer-decl "[list -> boolean]" list_adt nil)
     (nnint_plus_posint_is_posint application-judgement "posint"
-=======
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
-    (PRED type-eq-decl nil defined_types nil)
-    (bool nonempty-type-eq-decl nil booleans nil)
-    (boolean nonempty-type-decl nil booleans nil)
-    (list type-decl nil list_adt nil)
-    (number nonempty-type-decl nil numbers nil)
-    (measure_induction formula-decl nil measure_induction nil)
-    (nnint_plus_nnint_is_nnint application-judgement "nonneg_int"
->>>>>>> 9ab2fcb8b18f56256bf925350c875df696cc21ed
      integers nil)
     (int_minus_int_is_int application-judgement "int" integers nil)
     (real_le_is_total_order name-judgement "(total_order?[real])"
@@ -2502,11 +2491,7 @@
     (list type-decl nil list_adt nil)
     (boolean nonempty-type-decl nil booleans nil)
     (bool nonempty-type-eq-decl nil booleans nil)
-<<<<<<< HEAD
     (PRED type-eq-decl nil defined_types nil)
-=======
-    (PRED type-eq-decl nil defined_types nil) nil
->>>>>>> 9ab2fcb8b18f56256bf925350c875df696cc21ed
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
