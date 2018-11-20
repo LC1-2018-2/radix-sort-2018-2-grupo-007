@@ -3981,5 +3981,4 @@
      real_props nil)
     (is_sorted? const-decl "bool" sorting nil)
     (nth def-decl "T" list_props nil))
-   shostak)))
-
+shostak)))
